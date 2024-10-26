@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "485788256926",
+    "project_id": "cookly-df334",
+    "storage_bucket": "cookly-df334.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485788256926:android:7f5dbda8bd2709493b098f",
+        "android_client_info": {
+          "package_name": "com.example.cookly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485788256926-1s07gbq4qm0qpgr7c4u8ig0klsi7ogig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkVfYMmDIIifQQOYn9Kz-7dTWMs9cpVi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485788256926-1s07gbq4qm0qpgr7c4u8ig0klsi7ogig.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "485788256926-tcvjcm574ts6q8p0n00f4qgflfgtk79b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cookly"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -13,6 +13,8 @@ import 'package:cookly/modules/auth/presentation/widgets/bloc/registration_form_
     as _i382;
 import 'package:cookly/modules/main_dashboard/bloc/main_dashboard_cubit.dart'
     as _i754;
+import 'package:cookly/modules/post_details/presentation/bloc/post_details_cubit.dart'
+    as _i701;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -31,6 +33,7 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i382.RegistrationFormCubit());
     gh.factory<_i642.AuthCubit>(() => _i642.AuthCubit());
     gh.factory<_i754.MainDashboardCubit>(() => _i754.MainDashboardCubit());
+    gh.factory<_i701.PostDetailsCubit>(() => _i701.PostDetailsCubit());
     return this;
   }
 }

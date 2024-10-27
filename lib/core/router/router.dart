@@ -1,5 +1,5 @@
 import 'package:cookly/modules/auth/presentation/auth_page.dart';
-import 'package:cookly/modules/main_dashboard/main_dashboard_page.dart';
+import 'package:cookly/modules/main_dashboard/presentation/main_dashboard_page.dart';
 import 'package:cookly/modules/registration/presentation/registration_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

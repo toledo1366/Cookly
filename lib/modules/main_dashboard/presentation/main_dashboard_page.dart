@@ -14,9 +14,13 @@ class MainDashboardPage extends StatelessWidget {
         builder: (context, state) => Scaffold(
           backgroundColor: Colors.lime[200],
           appBar: AppBar(
+            backgroundColor: Colors.white,
             leading: IconButton(
               onPressed: () {},
               icon: const Icon(Icons.menu)
+            ),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(30))
             ),
           ),
           body: state.maybeMap(
@@ -36,12 +40,14 @@ class MainDashboardPage extends StatelessWidget {
                           color: Colors.white
                         ),
                         width: MediaQuery.sizeOf(context).width,
+                        height: 150,
                         child: Row(
                           children: [
                             Image.network(
                               value.items[index].link,
-                              height: 75,
-                              width: 75,
+                              height: 100,
+                              width: 100,
+                              scale: 1.5,
                             ),
                             Expanded(
                               child: Column(
@@ -50,12 +56,19 @@ class MainDashboardPage extends StatelessWidget {
                                     value.items[index].title,
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 1,
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold
+                                    ),
                                   ),
-                                  Text(
-                                    value.items[index].description,
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 3,
-                                  )
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 10, top: 35, right: 10, bottom: 20),
+                                    child: Text(
+                                      value.items[index].description,
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 2,
+                                    ),
+                                  ),
                                 ],
                               )
                             )

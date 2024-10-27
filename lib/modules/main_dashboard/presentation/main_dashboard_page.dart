@@ -10,49 +10,62 @@ class MainDashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<MainDashboardCubit>(
       create: (context) => locator.get<MainDashboardCubit>()..init(),
-      child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu)
+      child: BlocBuilder<MainDashboardCubit, MainDashboardState>(
+        builder: (context, state) => Scaffold(
+          backgroundColor: Colors.lime[200],
+          appBar: AppBar(
+            leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.menu)
+            ),
           ),
-        ),
-        body: BlocBuilder<MainDashboardCubit, MainDashboardState>(
-          builder: (context, state) => state.maybeMap(
-            orElse: () => const Text('xDDDDDDD'),
-            postLoaded: (value) =>  Expanded(child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Expanded(child: ListView.builder(
-                    itemCount: value.items.length,
-                    itemBuilder: (context, index) => Padding(
-                      padding: const EdgeInsets.all(15),
+          body: state.maybeMap(
+            orElse: () => const Text('Loading'),
+            postLoaded: (value) => Padding(
+              padding: const EdgeInsets.all(10),
+              child: SizedBox(
+                height: MediaQuery.sizeOf(context).height,
+                child: ListView.builder(
+                  itemCount: value.items.length,
+                  itemBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.all(15),
+                      child: Container(
+                        padding: const EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white
+                        ),
+                        width: MediaQuery.sizeOf(context).width,
                         child: Row(
                           children: [
                             Image.network(
                               value.items[index].link,
-                              height: 150,
-                              width: 150,
+                              height: 75,
+                              width: 75,
                             ),
-                            Column(
-                              children: [
-                                Text(
-                                  value.items[index].title,
-                                  
-                                ),
-                                Text(
-                                  value.items[index].description
-                                )
-                              ],
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Text(
+                                    value.items[index].title,
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 1,
+                                  ),
+                                  Text(
+                                    value.items[index].description,
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 3,
+                                  )
+                                ],
+                              )
                             )
                           ],
                         ),
-                      ),
-                    )),
+                    ),
+                  ),
                 ),
-              ],
-            ) ),
+              )
+            ),
           ),
         ),
       ),

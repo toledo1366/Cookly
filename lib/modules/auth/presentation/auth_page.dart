@@ -70,6 +70,7 @@ class AuthPage extends StatelessWidget {
                         TextSpan(text: 'Google', style: const TextStyle(color: Colors.blue), recognizer: TapGestureRecognizer()..onTap = () async {
                           await BlocProvider.of<AuthCubit>(context).runLoginFlowWithGoogleProvider();
                         })
+                        
                       ]
                     ),
                   ),
